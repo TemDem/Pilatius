@@ -242,7 +242,7 @@ body::after {
 .popup label input {
   display: none
 }
-.popup label input:checked+p::before {
+.popup label input:checked+span::before {
   background: url(../img/icons/check.svg) center/20px no-repeat
 }
 .popup__close {
