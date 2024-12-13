@@ -193,7 +193,7 @@ body::after {
   max-width: 450px;
   padding: 40px 20px
 }
-.popup span {
+.popup p {
   font-weight: 500;
   padding-bottom: .3125rem
 }
@@ -225,13 +225,13 @@ body::after {
 .popup label {
   cursor: pointer
 }
-.popup label p {
+.popup label span {
   display: flex;
   align-items: center;
   gap: .625rem;
   padding-bottom: 0
 }
-.popup label p::before {
+.popup label span::before {
   content: "";
   flex: 0 0 20px;
   width: 20px;
