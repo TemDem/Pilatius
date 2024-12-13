@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241213194215">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__row">
+					<a href="/" class="header__logo logo">
+						<img src="img/logo.svg" alt="logo">
+					</a>
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item _scroll">
+									<a href="#health-section" class="menu__link">
+										Здоровье
+									</a>
+								</li>
+								<li class="menu__item _scroll">
+									<a href="#services" class="menu__link">
+										Оборудование
+									</a>
+								</li>
+								<li class="menu__item _scroll">
+									<a href="#reviews" class="menu__link">
+										Отзывы
+									</a>
+								</li>
+								<li class="menu__item _scroll">
+									<a href="#team" class="menu__link">
+										Команда
+									</a>
+								</li>
+								<li class="menu__item _scroll">
+									<a href="#interior" class="menu__link">
+										Интерьер
+									</a>
+								</li>
+								<li class="menu__item _scroll">
+									<a href="#contacts" class="menu__link">
+										Контакты
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__main-section main-section">
+				<div class="main-section__container">
+					<div class="main-section__row">
+						<div class="main-section__content">
+							<div class="main-section__sale">
+								<span>
+									получить
+									скидку
+									<span>50%</span>
+								</span>
+							</div>
+							<h1 class="main-section__title title">
+								Lorem ipsum dolor sit amet.
+							</h1>
+							<div class="main-section__text text">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi facere odit et commodi
+								autem minima!
+							</div>
+
+							<div class="marquee">
+								<div class="marquee__container">
+									Записаться на пробное занятия
+								</div>
+							</div>
+						</div>
+						<div class="main-section__image">
+							<img src="img/main-section/image-01.webp" alt="Image">
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<section id="health-section" class="page__health health">
+
+				<div id="circle-data" data-text-1="боль1" data-text-2="боль2" data-text-3="боль3" data-text-4="боль4" data-text-5="боль5" data-text-6="боль6" data-text-7="боль7" data-text-8="боль8" data-text-9="боль9" data-text-10="боль10" data-text-center="Твое Здоровье" style="display: none;"></div>
+				<canvas id="circleCanvas"></canvas>
+
+			</section>
+			<section id="services" class="page__services services">
+				<div class="services__container">
+					<h2 class="services__title title">
+						Наши услуги
+					</h2>
+					<div class="services__slider swiper">
+						<div class="services__wrapper swiper-wrapper">
+							<div class="services__slide swiper-slide">
+								<div class="services__slide-content">
+									<div class="services__text-content">
+										<div class="services__slide-title">
+											Групповые тренировки
+										</div>
+										<div class="services__text">
+											в мини-группах до 5 человек
+										</div>
+										<div class="services__subtext">
+											от 1500р. за занятие
+										</div>
+									</div>
+									<div class="services__image">
+										<img class="ibg" src="img/services/image-01.webp" alt="Image">
+									</div>
+								</div>
+							</div>
+							<div class="services__slide swiper-slide">
+								<div class="services__slide-content">
+									<div class="services__text-content">
+										<div class="services__slide-title">
+											Групповые тренировки
+										</div>
+										<div class="services__text">
+											в мини-группах до 5 человек
+										</div>
+										<div class="services__subtext">
+											от 1500р. за занятие
+										</div>
+									</div>
+									<div class="services__image">
+										<img class="ibg" src="img/services/image-01.webp" alt="Image">
+									</div>
+								</div>
+							</div>
+							<div class="services__slide swiper-slide">
+								<div class="services__slide-content">
+									<div class="services__text-content">
+										<div class="services__slide-title">
+											Групповые тренировки
+										</div>
+										<div class="services__text">
+											в мини-группах до 5 человек
+										</div>
+										<div class="services__subtext">
+											от 1500р. за занятие
+										</div>
+									</div>
+									<div class="services__image">
+										<img class="ibg" src="img/services/image-01.webp" alt="Image">
+									</div>
+								</div>
+							</div>
+							<div class="services__slide swiper-slide">
+								<div class="services__slide-content">
+									<div class="services__text-content">
+										<div class="services__slide-title">
+											Групповые тренировки
+										</div>
+										<div class="services__text">
+											в мини-группах до 5 человек
+										</div>
+										<div class="services__subtext">
+											от 1500р. за занятие
+										</div>
+									</div>
+									<div class="services__image">
+										<img class="ibg" src="img/services/image-01.webp" alt="Image">
+									</div>
+								</div>
+							</div>
+							<div class="services__slide swiper-slide">
+								<div class="services__slide-content">
+									<div class="services__text-content">
+										<div class="services__slide-title">
+											Групповые тренировки
+										</div>
+										<div class="services__text">
+											в мини-группах до 5 человек
+										</div>
+										<div class="services__subtext">
+											от 1500р. за занятие
+										</div>
+									</div>
+									<div class="services__image">
+										<img class="ibg" src="img/services/image-01.webp" alt="Image">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="equipment" class="page__equipment equipment">
+				<div class="equipment__container">
+					<h2 class="equipment__title title">
+						Наше оборудование
+					</h2>
+					<div class="equipment__items">
+						<div class="equipment__item">
+							<img src="img/equipment/icon-01.svg" alt="Image">
+							<div class="equipment__content">
+								<div class="equipment__subtitle">
+									Название
+								</div>
+								<div class="equipment__text">
+									Lorem, ipsum dolor.
+								</div>
+							</div>
+						</div>
+						<div class="equipment__item">
+							<img src="img/equipment/icon-01.svg" alt="Image">
+							<div class="equipment__content">
+								<div class="equipment__subtitle">
+									Название
+								</div>
+								<div class="equipment__text">
+									Lorem, ipsum dolor.
+								</div>
+							</div>
+						</div>
+						<div class="equipment__item">
+							<img src="img/equipment/icon-01.svg" alt="Image">
+							<div class="equipment__content">
+								<div class="equipment__subtitle">
+									Название
+								</div>
+								<div class="equipment__text">
+									Lorem, ipsum dolor.
+								</div>
+							</div>
+						</div>
+						<div class="equipment__item">
+							<img src="img/equipment/icon-01.svg" alt="Image">
+							<div class="equipment__content">
+								<div class="equipment__subtitle">
+									Название
+								</div>
+								<div class="equipment__text">
+									Lorem, ipsum dolor.
+								</div>
+							</div>
+						</div>
+						<div class="equipment__item">
+							<img src="img/equipment/icon-01.svg" alt="Image">
+							<div class="equipment__content">
+								<div class="equipment__subtitle">
+									Название
+								</div>
+								<div class="equipment__text">
+									Lorem, ipsum dolor.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="reviews" class="page__reviews reviews">
+				<div class="reviews__container">
+					<h2 class="reviews__tilte title"></h2>
+					<script src="https://res.smartwidgets.ru/app.js?_v=20241213194215" defer></script>
+					<div class="sw-app" data-app="c707f3194b608be74fdb4653377bce85"></div>
+				</div>
+			</section>
+			<section id="team" class="page__team team">
+				<div class="team__container">
+
+					<div class="team__title title">
+						Наша команда
+					</div>
+					<div class="team__row">
+						<div class="team__items">
+							<div data-popup="#popup-personal-1" class="team__item">
+								<div class="team__avatar">
+									<img class="ibg" src="img/team/image-01.webp" alt="Image">
+								</div>
+								<div class="team__name">
+									Lorem, ipsum.
+								</div>
+							</div>
+							<div data-popup="#popup-personal-2" class="team__item">
+								<div style="border-color:#8b51fd;" class="team__avatar">
+									<img class="ibg" src="img/team/image-01.webp" alt="Image">
+								</div>
+								<div style="background-color:#8b51fd;" class="team__name">
+									Lorem, ipsum.
+								</div>
+							</div>
+							<div data-popup="#popup-personal-3" class="team__item">
+								<div style="border-color: #04bd65;" class="team__avatar">
+									<img class="ibg" src="img/team/image-01.webp" alt="Image">
+								</div>
+								<div style="background-color: #04bd65;" class="team__name">
+									Lorem, ipsum.
+								</div>
+							</div>
+							<div data-popup="#popup-personal-4" class="team__item">
+								<div style="border-color: #a6a6a6;" class="team__avatar">
+									<img class="ibg" src="img/team/image-01.webp" alt="Image">
+								</div>
+								<div style="background-color: #a6a6a6;" class="team__name">
+									Lorem, ipsum.
+								</div>
+							</div>
+							<div data-popup="#popup-personal-5" class="team__item">
+								<div style="border-color: #ff65c3;" class="team__avatar">
+									<img class="ibg" src="img/team/image-01.webp" alt="Image">
+								</div>
+								<div style="background-color: #ff65c3;" class="team__name">
+									Lorem, ipsum.
+								</div>
+							</div>
+						</div>
+						<div class="team__text">
+							<p>
+								Наша студия бла бла бла Вавщааа
+								Пафьпмлфавпоатпфлав Авпммтавщтмавтиао
+								Втиолиапав Иавтмоавиоматвлмьавлмтавм
+								Мамтавомиа вотмавлтмоавимоавтма
+								Мавмтавомиавотмл
+							</p>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ratione deserunt magni
+								aliquid reprehenderit ipsam, voluptatibus temporibus odit amet ad quam. Explicabo iure
+								soluta libero laudantium sequi sed eos temporibus!
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="interior" class="page__interior interior">
+				<div class="interior__container">
+					<h2 class="interior__title title">
+						Интерьер
+					</h2>
+					<div class="interior__grid" data-gallery>
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-01.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-02.webp" alt="Image">
+						</div>
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-02.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-03.webp" alt="Image">
+						</div>
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-04.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-05.webp" alt="Image">
+						</div>
+
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-06.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-07.webp" alt="Image">
+						</div>
+
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-08.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-09.webp" alt="Image">
+						</div>
+
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-10.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-11.webp" alt="Image">
+						</div>
+
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-12.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-13.webp" alt="Image">
+						</div>
+
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-14.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-15.webp" alt="Image">
+						</div>
+
+						<div class="interior__image">
+							<img class="visible ibg" src="img/interior/image-16.webp" alt="Image">
+							<img class="hidden ibg" src="img/interior/image-17.webp" alt="Image">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="contacts" class="page__contacts contacts">
+				<div class="contacts__container">
+					<h2 class="contacts__title title">
+						Контакты
+					</h2>
+					<div class="contacts__map">
+						<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/pilatius/206714286826/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">PilatiUs</a><a href="https://yandex.ru/maps/213/moscow/category/pilates_studio/244074623723/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Студия пилатеса в
+								Москве</a><a href="https://yandex.ru/maps/213/moscow/category/sports_club/184107297/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Спортивный клуб, секция в
+								Москве</a><iframe src="https://yandex.ru/map-widget/v1/org/pilatius/206714286826/gallery/?ll=37.591386%2C55.740426&z=16" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+					</div>
+					<h3 class="contacts__subtitle">
+						Наши соц. сети
+					</h3>
+					<div class="contacts__social">
+						<a href="" target="_blank">
+							<img src="img/icons/whatsapp.svg" alt="icon">
+						</a>
+						<a href="" target="_blank">
+							<img src="img/icons/telegram.svg" alt="icon">
+						</a>
+						<a href="" target="_blank">
+							<img src="img/icons/vk.svg" alt="icon">
+						</a>
+						<a href="" target="_blank">
+							<img src="img/icons/instagram.svg" alt="icon">
+						</a>
+						<a href="" target="_blank">
+							<img src="img/icons/youtube.svg" alt="icon">
+						</a>
+						<a href="" target="_blank">
+							<img src="img/icons/email.svg" alt="icon">
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__row">
+					<div class="footer__left">
+						<p>ИНН 012340024</p>
+						<p>ОГРН 012340024</p>
+						<p><a href="tel:+79000000000">+7 (900) 000-00-00</a></p>
+					</div>
+					<div class="footer__center">
+						<p><b>Часы работы:</b></p>
+						<p>БУДНИ - 10.00 - 22.00</p>
+						<p>ВЫХ. - 10.00 - 21.00</p>
+					</div>
+					<div class="footer__right">
+						<button data-popup="#contacts-form" class="footer__btn btn">
+							Записаться онлайн
+						</button>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="contacts-form" aria-hidden="true" class="popup popup_contacts">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/cross.svg" alt="icon">
+				</button>
+				<div class="popup__text">
+					<div class="popup__title">
+						Обрантная связь
+					</div>
+					<form action="#">
+						<p>Ваше имя</p>
+						<input type="text" placeholder="Имя">
+						<p>Ваш телефон</p>
+						<input type="text" class="tel" placeholder="Телефон">
+						<p>Ваши пожелания</p>
+						<textarea placeholder="Комментарий"></textarea>
+						<label>
+							<input checked type="checkbox">
+							<span>Согласен с обработкой персональных данных</span>
+						</label>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-personal-1" aria-hidden="true" class="popup popup_personal">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/cross.svg" alt="icon">
+				</button>
+				<div class="popup__text">
+					<div class="popup__personal personal">
+						<div class="personal__row">
+							<div class="personal__image">
+								<img class="ibg" src="img/personal/image-01.webp" alt="Photo">
+							</div>
+							<div class="personal__content">
+								<div class="personal__name">
+									Иван Иванов
+								</div>
+								<div class="personal__text">
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque molestiae voluptate inventore possimus repellat dicta earum culpa temporibus.
+									</p>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup-personal-2" aria-hidden="true" class="popup popup_personal">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/cross.svg" alt="icon">
+				</button>
+				<div class="popup__text">
+					<div class="popup__personal personal">
+						<div class="personal__row">
+							<div class="personal__image">
+								<img class="ibg" src="img/personal/image-01.webp" alt="Photo">
+							</div>
+							<div class="personal__content">
+								<div class="personal__name">
+									Иван Иванов
+								</div>
+								<div class="personal__text">
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore possimus repellat dicta earum culpa temporibus.
+									</p>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup-personal-3" aria-hidden="true" class="popup popup_personal">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/cross.svg" alt="icon">
+				</button>
+				<div class="popup__text">
+					<div class="popup__personal personal">
+						<div class="personal__row">
+							<div class="personal__image">
+								<img class="ibg" src="img/personal/image-01.webp" alt="Photo">
+							</div>
+							<div class="personal__content">
+								<div class="personal__name">
+									Иван Иванов
+								</div>
+								<div class="personal__text">
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore possimus repellat dicta earum culpa temporibus.
+									</p>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup-personal-4" aria-hidden="true" class="popup popup_personal">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/cross.svg" alt="icon">
+				</button>
+				<div class="popup__text">
+					<div class="popup__personal personal">
+						<div class="personal__row">
+							<div class="personal__image">
+								<img class="ibg" src="img/personal/image-01.webp" alt="Photo">
+							</div>
+							<div class="personal__content">
+								<div class="personal__name">
+									Иван Иванов
+								</div>
+								<div class="personal__text">
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore possimus repellat dicta earum culpa temporibus.
+									</p>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup-personal-5" aria-hidden="true" class="popup popup_personal">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/cross.svg" alt="icon">
+				</button>
+				<div class="popup__text">
+					<div class="popup__personal personal">
+						<div class="personal__row">
+							<div class="personal__image">
+								<img class="ibg" src="img/personal/image-01.webp" alt="Photo">
+							</div>
+							<div class="personal__content">
+								<div class="personal__name">
+									Иван Иванов
+								</div>
+								<div class="personal__text">
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore possimus repellat dicta earum culpa temporibus.
+									</p>
+									<p>
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum consequuntur atque
+										molestiae voluptate inventore
+										possimus repellat dicta earum culpa temporibus.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="pain" aria-hidden="true" class="popup popup_text">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/cross.svg" alt="icon">
+				</button>
+				<div class="popup__text">
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio nihil earum harum aliquam dolor maiores nemo repellat temporibus voluptas vero ullam dolores fugit reiciendis facere assumenda aut excepturi fugiat cupiditate cumque, incidunt tempore. Quis delectus quasi odit, nihil unde quaerat labore!</p>
+					<p>Error impedit laboriosam adipisci, quas reprehenderit explicabo tempora, ducimus enim nobis ipsum minima aut minus qui magni quisquam corporis deserunt nesciunt quidem eligendi incidunt consequatur molestias quos harum. Error sed quibusdam explicabo sunt impedit, in accusamus quidem assumenda quis, ducimus quod reiciendis qui earum rerum.</p>
+					<p> Delectus mollitia vel ipsam, amet facilis atque nisi sapiente in qui animi, tempora repellat?</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="health" aria-hidden="true" class="popup popup_text">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/cross.svg" alt="icon">
+				</button>
+				<div class="popup__text">
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio nihil earum harum aliquam dolor
+						maiores nemo repellat temporibus voluptas vero ullam dolores fugit reiciendis facere assumenda aut
+						excepturi fugiat cupiditate cumque, incidunt tempore. Quis delectus quasi odit, nihil unde quaerat
+						labore!</p>
+					<p>Error impedit laboriosam adipisci, quas reprehenderit explicabo tempora, ducimus enim nobis ipsum
+						minima aut minus qui magni quisquam corporis deserunt nesciunt quidem eligendi incidunt consequatur
+						molestias quos harum. Error sed quibusdam explicabo sunt impedit, in accusamus quidem assumenda
+						quis, ducimus quod reiciendis qui earum rerum.</p>
+					<p> Delectus mollitia vel ipsam, amet facilis atque nisi sapiente in qui animi, tempora repellat?</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20241213194215"></script>
+</body>
+
+</html>
