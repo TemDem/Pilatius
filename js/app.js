@@ -9207,7 +9207,20 @@ PERFORMANCE OF THIS SOFTWARE.
                 }
                 document.addEventListener("afterPopupClose", (function(e) {
                     isPaused = false;
-                    console.log(isPaused);
+                    circles.forEach((circle => {
+                        const dx = circle.x - centerCircle.x;
+                        const dy = circle.y - centerCircle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < circle.radius + centerCircle.radius) {
+                            const angle = Math.atan2(dy, dx);
+                            const overlap = circle.radius + centerCircle.radius - distance;
+                            circle.x += Math.cos(angle) * overlap;
+                            circle.y += Math.sin(angle) * overlap;
+                            const speed = Math.sqrt(circle.dx * circle.dx + circle.dy * circle.dy) || 1;
+                            circle.dx = Math.cos(angle) * speed;
+                            circle.dy = Math.sin(angle) * speed;
+                        }
+                    }));
                 }));
             }));
             function animate() {
@@ -9262,25 +9275,37 @@ PERFORMANCE OF THIS SOFTWARE.
                 });
             }));
         }));
-        const imageContainers = document.querySelectorAll(".interior__image");
-        if (imageContainers.length > 0) {
-            let changeCount = 0;
-            function swapImages() {
-                if (changeCount >= 3) return;
-                changeCount++;
-                imageContainers.forEach((container => {
-                    const images = container.querySelectorAll("img");
-                    images.forEach((img => {
-                        img.classList.toggle("visible");
-                        img.classList.toggle("hidden");
-                    }));
-                }));
+        document.addEventListener("afterPopupOpen", (function(e) {
+            const currentPopup = e.detail.popup;
+            const input = currentPopup.previousOpen.element.querySelector("input.hidden");
+            if (input) input.value = currentPopup.lastFocusEl.classList.contains("main-section__sale") ? input.value = "Скидка" : input.value = "Обратная связь";
+        }));
+        const gallery = document.querySelector(".interior__grid");
+        let intervalId;
+        const swapRandomImage = () => {
+            const items = gallery.querySelectorAll("[data-iso-item]");
+            if (items.length === 0) return;
+            const randomItem = items[Math.floor(Math.random() * items.length)];
+            const visibleImage = randomItem.querySelector(".visible");
+            const hiddenImage = randomItem.querySelector(".hidden");
+            if (visibleImage && hiddenImage) {
+                visibleImage.classList.remove("visible");
+                visibleImage.classList.add("hidden");
+                hiddenImage.classList.remove("hidden");
+                hiddenImage.classList.add("visible");
             }
-            const interval = setInterval((() => {
-                swapImages();
-                if (changeCount >= 3) clearInterval(interval);
-            }), 5e3);
-        }
+        };
+        const observer = new IntersectionObserver((entries => {
+            entries.forEach((entry => {
+                if (entry.isIntersecting) {
+                    if (!intervalId) intervalId = setInterval(swapRandomImage, Math.random() * 2e3 + 3e3);
+                } else {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+            }));
+        }));
+        observer.observe(gallery);
         menuInit();
         pageNavigation();
     })();

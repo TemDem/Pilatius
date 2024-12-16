@@ -355,6 +355,7 @@ body::after {
   object-fit: contain
 }
 .logo img {
+  width: 250px;
   max-width: 100%
 }
 .title {
@@ -475,6 +476,9 @@ canvas {
 textarea {
   resize: vertical
 }
+input.hidden {
+  display: none
+}
 .menu-open .header::after {
   opacity: 1;
   visibility: visible;
@@ -486,8 +490,11 @@ textarea {
   opacity: 1
 }
 .header {
-  background-color: #fff;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
   padding: 20px 0
 }
 .header::after {
@@ -500,7 +507,8 @@ textarea {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  z-index: 10
+  z-index: 10;
+  transition: .3s
 }
 .header__row {
   display: flex;
@@ -515,7 +523,7 @@ textarea {
   font-size: 1.125rem
 }
 .menu__link {
-  color: var(--primary);
+  color: #fff;
   transition: .3s;
   font-family: Montserrat
 }
@@ -543,9 +551,24 @@ textarea {
 }
 .main-section {
   padding: 20px 0;
-  background-color: var(--bg-primary);
-  min-height: calc(100vh - 110px);
+  padding-top: 145px;
+  min-height: 100vh;
   position: relative
+}
+.main-section__bc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%
+}
+.main-section__bc img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .main-section__container {
   position: relative
@@ -676,12 +699,11 @@ textarea {
   left: -1000%
 }
 .team {
-  background: url(../img/team/decor.svg) left/contain no-repeat;
   margin-bottom: 4.375rem;
   position: relative
 }
-.team::after {
-  content: ""
+.team__container {
+  background: url(../img/team/decor.svg) left/contain no-repeat
 }
 .team__title {
   padding-bottom: 1.875rem
@@ -747,7 +769,7 @@ textarea {
 }
 .interior__grid {
   display: grid;
-  gap: .625rem;
+  gap: .3125rem;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr))
 }
 .interior__image {
@@ -755,6 +777,10 @@ textarea {
   padding-bottom: 100%;
   overflow: hidden;
   cursor: pointer
+}
+.interior__image_big {
+  grid-column: span 2;
+  grid-row: span 2
 }
 .interior__image:hover img {
   -webkit-transform: scale(1.1);
@@ -1668,10 +1694,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     left: -100%;
     transition: .3s;
     width: 100%;
-    z-index: 9;
     text-align: center;
     height: 100vh;
     overflow: auto;
+    z-index: 5;
     background-color: #eee;
     padding: 160px 40px 0 40px
   }
@@ -1682,7 +1708,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .menu__link {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 1rem
+    font-size: 1rem;
+    color: var(--primary)
   }
   .icon-menu {
     display: block;
@@ -1767,10 +1794,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     margin-bottom: 2.5rem
   }
   .team {
-    background: url(../img/team/decor.svg) top/70% no-repeat
-  }
-  .team {
     margin-bottom: 2.5rem
+  }
+  .team__container {
+    background: url(../img/team/decor.svg) top/70% no-repeat
   }
   .team__title {
     text-align: center
@@ -1803,7 +1830,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 @media (max-width:37.5em) {
-  .team {
+  .team__container {
     background: url(../img/team/decor.svg) top/contain no-repeat
   }
 }

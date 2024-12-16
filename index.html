@@ -5,7 +5,7 @@
 	<title>HomePage</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20241213194215">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241216161406">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -15,7 +15,7 @@
 			<div class="header__container">
 				<div class="header__row">
 					<a href="/" class="header__logo logo">
-						<img src="img/logo.svg" alt="logo">
+						<img src="img/PilatiUs_Монтажная область 1 копия 9.svg" alt="logo">
 					</a>
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
@@ -59,16 +59,19 @@
 		</header>
 		<main class="page">
 			<section class="page__main-section main-section">
+				<div class="main-section__bc">
+					<img src="img/main-section/image-01 (1).JPG" alt="Image">
+				</div>
 				<div class="main-section__container">
 					<div class="main-section__row">
 						<div class="main-section__content">
-							<div class="main-section__sale">
+							<button data-popup="#contacts-form" class="main-section__sale">
 								<span>
 									получить
 									скидку
 									<span>50%</span>
 								</span>
-							</div>
+							</button>
 							<h1 class="main-section__title title">
 								Lorem ipsum dolor sit amet.
 							</h1>
@@ -83,9 +86,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="main-section__image">
+						<!-- <div class="main-section__image">
 							<img src="img/main-section/image-01.webp" alt="Image">
-						</div>
+						</div> -->
 					</div>
 
 				</div>
@@ -261,13 +264,13 @@
 					</div>
 				</div>
 			</section>
-			<section id="reviews" class="page__reviews reviews">
+			<!-- <section id="reviews" class="page__reviews reviews">
 				<div class="reviews__container">
 					<h2 class="reviews__tilte title"></h2>
-					<script src="https://res.smartwidgets.ru/app.js?_v=20241213194215" defer></script>
+					<script src="https://res.smartwidgets.ru/app.js?_v=20241216161406" defer></script>
 					<div class="sw-app" data-app="c707f3194b608be74fdb4653377bce85"></div>
 				</div>
-			</section>
+			</section> -->
 			<section id="team" class="page__team team">
 				<div class="team__container">
 
@@ -339,46 +342,46 @@
 					<h2 class="interior__title title">
 						Интерьер
 					</h2>
-					<div class="interior__grid" data-gallery>
-						<div class="interior__image">
+					<div class="interior__grid" data-iso-items data-gallery>
+						<div data-iso-item class="interior__image interior__image_big">
 							<img class="visible ibg" src="img/interior/image-01.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-02.webp" alt="Image">
 						</div>
-						<div class="interior__image">
+						<div data-iso-item class="interior__image">
 							<img class="visible ibg" src="img/interior/image-02.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-03.webp" alt="Image">
 						</div>
-						<div class="interior__image">
+						<div data-iso-item class="interior__image">
 							<img class="visible ibg" src="img/interior/image-04.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-05.webp" alt="Image">
 						</div>
 
-						<div class="interior__image">
+						<div data-iso-item class="interior__image">
 							<img class="visible ibg" src="img/interior/image-06.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-07.webp" alt="Image">
 						</div>
 
-						<div class="interior__image">
+						<div data-iso-item class="interior__image">
 							<img class="visible ibg" src="img/interior/image-08.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-09.webp" alt="Image">
 						</div>
 
-						<div class="interior__image">
+						<div data-iso-item class="interior__image interior__image_big">
 							<img class="visible ibg" src="img/interior/image-10.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-11.webp" alt="Image">
 						</div>
 
-						<div class="interior__image">
+						<div data-iso-item class="interior__image">
 							<img class="visible ibg" src="img/interior/image-12.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-13.webp" alt="Image">
 						</div>
 
-						<div class="interior__image">
+						<div data-iso-item class="interior__image">
 							<img class="visible ibg" src="img/interior/image-14.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-15.webp" alt="Image">
 						</div>
 
-						<div class="interior__image">
+						<div data-iso-item class="interior__image">
 							<img class="visible ibg" src="img/interior/image-16.webp" alt="Image">
 							<img class="hidden ibg" src="img/interior/image-17.webp" alt="Image">
 						</div>
@@ -464,6 +467,7 @@
 							<input checked type="checkbox">
 							<span>Согласен с обработкой персональных данных</span>
 						</label>
+						<input type="text" class="hidden">
 					</form>
 				</div>
 			</div>
@@ -689,7 +693,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241213194215"></script>
+	<script src="js/app.min.js?_v=20241216161406"></script>
 </body>
 
 </html>
