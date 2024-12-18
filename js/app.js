@@ -9082,18 +9082,13 @@ PERFORMANCE OF THIS SOFTWARE.
                 let circle;
                 let isValidPosition = false;
                 while (!isValidPosition) {
-                    const isCircle = Math.random() > .5;
-                    Math.random();
-                    const width = isCircle ? Math.random() * 120 + 90 : Math.random() * 150 + 90;
-                    const height = isCircle ? width : Math.random() * 120 + 75;
+                    const size = Math.random() * 100 + 50;
                     circle = {
                         x: Math.random() * canvas.width,
                         y: Math.random() * canvas.height,
                         dx: (Math.random() - .5) * 2,
                         dy: (Math.random() - .5) * 2,
-                        width: width * .6,
-                        height: height * .6,
-                        radius: Math.max(width, height) / 2 * .6,
+                        radius: size * .6,
                         color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.5)`,
                         text,
                         isHovered: false
@@ -9107,7 +9102,7 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
             function drawCircle(circle) {
                 ctx.beginPath();
-                ctx.ellipse(circle.x, circle.y, circle.width / 2, circle.height / 2, 0, 0, Math.PI * 2);
+                ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
                 ctx.fillStyle = circle.color;
                 ctx.fill();
                 ctx.closePath();
@@ -9147,101 +9142,44 @@ PERFORMANCE OF THIS SOFTWARE.
                     if (distance < circle.radius + centerCircle.radius) {
                         const angle = Math.atan2(dy, dx);
                         const overlap = circle.radius + centerCircle.radius - distance;
-                        circle.dx += Math.cos(angle) * overlap * .1;
-                        circle.dy += Math.sin(angle) * overlap * .1;
-                        const moveDistance = overlap;
-                        circle.x += Math.cos(angle) * moveDistance;
-                        circle.y += Math.sin(angle) * moveDistance;
+                        circle.x += Math.cos(angle) * overlap;
+                        circle.y += Math.sin(angle) * overlap;
                     }
-                    circles.forEach((otherCircle => {
-                        if (otherCircle !== circle) {
-                            const dx = circle.x - otherCircle.x;
-                            const dy = circle.y - otherCircle.y;
-                            const distance = Math.sqrt(dx * dx + dy * dy);
-                            if (distance < circle.radius + otherCircle.radius) {
-                                const angle = Math.atan2(dy, dx);
-                                const overlap = circle.radius + otherCircle.radius - distance;
-                                const moveDistance = overlap / 2;
-                                circle.x += Math.cos(angle) * moveDistance;
-                                circle.y += Math.sin(angle) * moveDistance;
-                                otherCircle.x -= Math.cos(angle) * moveDistance;
-                                otherCircle.y -= Math.sin(angle) * moveDistance;
-                                const relativeVelocityX = circle.dx - otherCircle.dx;
-                                const relativeVelocityY = circle.dy - otherCircle.dy;
-                                const velocityAlongNormal = relativeVelocityX * Math.cos(angle) + relativeVelocityY * Math.sin(angle);
-                                if (velocityAlongNormal > 0) return;
-                                const restitution = 1;
-                                const impulse = 2 * velocityAlongNormal / 2;
+                }
+                circles.forEach((otherCircle => {
+                    if (otherCircle !== circle) {
+                        const dx = circle.x - otherCircle.x;
+                        const dy = circle.y - otherCircle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < circle.radius + otherCircle.radius) {
+                            const angle = Math.atan2(dy, dx);
+                            const overlap = circle.radius + otherCircle.radius - distance;
+                            if (!circle.isHovered) {
+                                circle.x += Math.cos(angle) * overlap / 2;
+                                circle.y += Math.sin(angle) * overlap / 2;
+                            }
+                            if (!otherCircle.isHovered) {
+                                otherCircle.x -= Math.cos(angle) * overlap / 2;
+                                otherCircle.y -= Math.sin(angle) * overlap / 2;
+                            }
+                            const relativeVelocityX = circle.dx - otherCircle.dx;
+                            const relativeVelocityY = circle.dy - otherCircle.dy;
+                            const velocityAlongNormal = relativeVelocityX * Math.cos(angle) + relativeVelocityY * Math.sin(angle);
+                            if (velocityAlongNormal > 0) return;
+                            const restitution = 1;
+                            const impulse = 2 * velocityAlongNormal / 2;
+                            if (!circle.isHovered) {
                                 circle.dx -= impulse * Math.cos(angle) * restitution;
                                 circle.dy -= impulse * Math.sin(angle) * restitution;
+                            }
+                            if (!otherCircle.isHovered) {
                                 otherCircle.dx += impulse * Math.cos(angle) * restitution;
                                 otherCircle.dy += impulse * Math.sin(angle) * restitution;
                             }
                         }
-                    }));
-                }
-            }
-            let isPaused = false;
-            canvas.addEventListener("click", (event => {
-                const rect = canvas.getBoundingClientRect();
-                const mouseX = event.clientX - rect.left;
-                const mouseY = event.clientY - rect.top;
-                let clickedCircle = null;
-                circles.forEach((circle => {
-                    const dx = mouseX - circle.x;
-                    const dy = mouseY - circle.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < circle.radius) clickedCircle = circle;
-                }));
-                if (clickedCircle) {
-                    isPaused = true;
-                    flsModules.popup.open("#pain");
-                } else {
-                    const dx = mouseX - centerCircle.x;
-                    const dy = mouseY - centerCircle.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < centerCircle.radius) {
-                        isPaused = true;
-                        flsModules.popup.open("#health");
                     }
-                }
-                document.addEventListener("afterPopupClose", (function(e) {
-                    isPaused = false;
-                    circles.forEach((circle => {
-                        const dx = circle.x - centerCircle.x;
-                        const dy = circle.y - centerCircle.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        if (distance < circle.radius + centerCircle.radius) {
-                            const angle = Math.atan2(dy, dx);
-                            const overlap = circle.radius + centerCircle.radius - distance;
-                            circle.x += Math.cos(angle) * overlap;
-                            circle.y += Math.sin(angle) * overlap;
-                            const speed = Math.sqrt(circle.dx * circle.dx + circle.dy * circle.dy) || 1;
-                            circle.dx = Math.cos(angle) * speed;
-                            circle.dy = Math.sin(angle) * speed;
-                        }
-                    }));
                 }));
-            }));
-            function animate() {
-                if (!isPaused) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    drawCenterCircle();
-                    circles.forEach((circle => {
-                        drawCircle(circle);
-                        updateCircle(circle);
-                    }));
-                }
-                requestAnimationFrame(animate);
             }
-            animate();
-            window.addEventListener("resize", (() => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                centerCircle.x = canvas.width / 2;
-                centerCircle.y = canvas.height / 2;
-                animate();
-            }));
             canvas.addEventListener("mousemove", (event => {
                 const rect = canvas.getBoundingClientRect();
                 const mouseX = event.clientX - rect.left;
@@ -9252,6 +9190,23 @@ PERFORMANCE OF THIS SOFTWARE.
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     circle.isHovered = distance < circle.radius;
                 }));
+            }));
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawCenterCircle();
+                circles.forEach((circle => {
+                    drawCircle(circle);
+                    updateCircle(circle);
+                }));
+                requestAnimationFrame(animate);
+            }
+            animate();
+            window.addEventListener("resize", (() => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                centerCircle.x = canvas.width / 2;
+                centerCircle.y = canvas.height / 2;
+                animate();
             }));
         }
         const equipments = document.querySelectorAll(".equipment__item");
